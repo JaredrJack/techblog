@@ -1,0 +1,29 @@
+{
+  "name": "techblog",
+  "version": "1.0.0",
+  "description": "\"mvc-tech-blog\",",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"echo\\\"Error: no test specifird\\\" && exit 1\",",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaredrJack/techblog.git"
+  },
+  "author": "JaredrJack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaredrJack/techblog/issues"
+  },
+  "homepage": "https://github.com/JaredrJack/techblog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.1.4",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.3.3",
+    "sequelize": "^6.32.0"
+  }
+}
