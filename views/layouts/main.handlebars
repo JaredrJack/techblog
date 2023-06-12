@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Another Tech Blog</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel='icon' type='image/x-icon' href='/assets/images/favicon.ico' />
+</head>
+
+<div class="wrapper">
+  <header>
+    <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Another Tech Blog</h1>
+    <nav class="navbar mt-2">
+      {{#if logged_in}}
+      <ul>
+        <li>
+          <a href="/" class="navbar-item is-hoverable pt-1 button is-warning is-focused" id="main-title">
+            Homepage</a>
+        </li> <br>
+        <li>
+          <a href="/dashboard" class="navbar-item is-hoverable pt-1 button is-link is-outlined" id="dashboard">
+            Dashboard</a>
+        </li>
+        <li>
+          <a href="/dashboard/create" class="navbar-item is-hoverable pt-1 button is-primary is-outlined" id="create">
+            Create Post</a>
+        </li>
+        {{!-- <li>
+          <a href='/users/{{user.id}}' class="navbar-item is-hoverable pt-1 button is-info is-outlined" id="profile">
+            Profile</a>
+        </li> --}}
+        <li>
+          <a href='/logout' class="navbar-item is-hoverable pt-1 button is-danger is-outlined" id="logout">
+            Leave</a>
+        </li>
+      </ul>
+      {{else}}
+      <ul>
+        <li>
+          <a href="/" class="navbar-item is-hoverable pt-1 button is-warning is-focused" id="main-title">
+            Homepage</a>
+        </li> <br>
+        <li>
+          <a href="/login" class="navbar-item is-hoverable pt-1 button is-link is-outlined" id="login">
+            Log In</a>
+        </li>
+        <li>
+          <a href="/signup" class="navbar-item is-hoverable pt-1 button is-success is-outlined" id="signup">
+            Sign Up</a>
+        </li>
+      </ul>
+      {{/if}}
+
+    </nav>
+  </header>
+
+  <main>
+    {{{ body }}}
+  </main>
+
+  <footer class="footer rows">
+    <div class="content has-text-centered">
+      <a href="/">Homepage</a>
+      {{#if logged_in}} |
+      <a href="/dashboard/">Dashboard</a> |
+      <a href="/dashboard/create/">Create Post</a>
+      {{else}}
+      | <a href="/login">Log In</a> | <a href="/signup">Sign Up</a>
+      {{/if}}
+    </div>
+    <div class="row-is-full content has-text-centered">
+        &copy; Jared's techblog
+        <a href="https://github.com/JaredrJack"> | <i class="fab fa-github"></i></a> |
+        <a href="mailto:jaredrjack93@icloud.com"><i class="far fa-envelope"></i></a>
+           </div>
+  </footer>
+</div>
+
+
+{{#if logged_in}}
+<script src='/js/logout.js'></script>
+{{/if}}
+
+</body>
+
+</html>

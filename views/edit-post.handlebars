@@ -1,0 +1,28 @@
+<article>
+  <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
+  <h2 class="title mt-5">Edit Post</h2><hr>
+  <form class="edit-post-form">
+    <div>
+        <label for="post-title">Post Title</label>
+      <input class="input post-title" name="post-title" 
+        placeholder = "post title edits" type="text" value="{{post.title}}" />
+    </div>
+    <div>
+      <label for="post-content">Post Content:</label>
+      <input class="textarea post-content" name="post-content" 
+        placeholder = "Post content edits" type="text" value="{{post.post_body}}" />
+      <input type="hidden" name="edit-id" value="{{_id}}" />
+
+    </div>
+    <div class="is-pulled-right">
+       {{!-- Created by you on {{format_date post.created_at}} |
+       Updated by you on {{format_date updated_at}} | --}}
+      {{!-- <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "Comment" post.comments.length}}</a> --}}
+    </div>
+    <button type="submit" class="button is-success" id="saveBtn">Save Post</button>
+   
+</article>
+
+{{!-- {{> comments post.comments}} --}}
+
+<script src="/js/edit-post.js"></script>

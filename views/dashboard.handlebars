@@ -1,0 +1,39 @@
+<div class="mb-5 pt-3">
+  <h2 class="title">This is your dashboard</h2>
+  <h3>A safe space to add, edit, and delete your posts.</h3>
+  <hr> <br><br>
+</div>
+
+<ul>
+  <li>
+    <a href="/dashboard/create" class="button is-primary is-pulled-right" id="create">New Post
+    </a>
+  </li>
+</ul>
+
+
+{{!-- DELETE post --}}
+<div>
+  {{#if posts.length}}
+  <div class="col-md-6 post-list">
+    {{#each posts as |post|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <a href="url_to_delete" onclick="return confirm('Are you sure you want to delete this item?');">
+          <button class="btn btn-sm btn-danger delbtn post-list" data-id="{{post.id}}">DELETE</button>
+          </a>
+        <a href="/dashboard/edit/{{post.id}}">
+          <button class="btn btn-sm btn-warning edit-post-form">EDIT</button>
+          </a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src='/js/delete-post.js'></script>
+{{!-- <script src='/js/edit-post.js'></script> --}}

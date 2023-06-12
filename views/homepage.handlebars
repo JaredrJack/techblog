@@ -1,0 +1,8 @@
+{{#each posts as |post|}}
+
+{{!-- displays info in post-info partial handlebars page --}}
+{{> post-info post}}
+
+{{else}}
+<h6 class="pb-4 has-text-centered is-italic">There are currently no posts! -_- </h6>
+{{/each}}
